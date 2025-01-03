@@ -19,7 +19,8 @@ body {
 }
 
 .container {
-    width: 460px;
+    width: 90%;
+    max-width: 400px; /* Set a max width for larger screens */
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
@@ -41,7 +42,7 @@ h1 {
 
 .input-area {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack inputs vertically on smaller screens */
     margin-bottom: 20px;
 }
 
@@ -49,19 +50,14 @@ input[type="text"], input[type="date"], select {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    margin-right: 5px;
-    transition: border-color 0.3s;
-}
-
-input[type="text"]:focus, input[type="date"]:focus {
-    border-color: #007BFF;
+    margin-bottom: 10px; /* Add margin for spacing */
 }
 
 button {
+    padding: 10px;
     background-color: #007BFF;
     color: white;
     border: none;
-    padding: 10px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
@@ -117,33 +113,30 @@ li {
     100% { transform: translateY(0); }
 }
 
-/* Create multiple particles */
-.particle:nth-child(1) { left: 10%; animation-duration: 4s; }
-.particle:nth-child(2) { left: 30%; animation-duration: 5s; }
-.particle:nth-child(3) { left: 50%; animation-duration: 6s; }
-.particle:nth-child(4) { left: 70%; animation-duration: 4.5s; }
-.particle:nth-child(5) { left: 90%; animation-duration: 5.5s; }
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .input-area {
+        flex-direction: column; /* Stack inputs vertically */
+    }
 
-/* Create multiple shapes */
-.shape:nth-child(1) {
-    width: 100px ;
-    height: 100px;
-    top: 20%;
-    left: 10%;
+    input[type="text"], input[type="date"], select, button {
+        width: 95%; /* Full width for inputs and buttons */
+        margin-bottom: 10px; /* Add margin for spacing */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
 }
 
-.shape:nth-child(2) {
-    width: 150px;
-    height: 150px;
-    top: 50%;
-    left: 70%;
-}
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.2em; /* Further adjust font size for very small screens */
+    }
 
-.shape:nth-child(3) {
-    width: 200px;
-    height: 200px;
-    top: 80%;
-    left: 30%;
+    .container {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
 }
 
 .dark-mode {
