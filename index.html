@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Orbitron:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My To-Do List</h1>
+        </header>
+        <div class="input-area">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <input type="date" id="due-date" placeholder="Due Date">
+            <select id="category">
+                <option value="General">General</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+            <button id="add-task">Add</button>
+        </div>
+        <div id="task-count"></div>
+        <ul id="task-list"></ul>
+        <div id="progress-bar" style="width: 100%; background-color: #e0e0e0;">
+            <div id="progress" style="width: 0%; height: 5px; background-color: #007BFF;">
+        </div>
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </div>
+    
+    <!-- Particle and Shape Elements -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
